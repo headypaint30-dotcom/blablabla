@@ -7,6 +7,13 @@
         <title>Comet</title>
       <script type="module" crossorigin src="index.js"></script>
       <link rel="stylesheet" crossorigin href="index.css">
+        <script>
+  // Force le bypass du check Tauri
+  window.__TAURI__ = {
+    invoke: () => Promise.resolve(true),
+    event: { listen: () => {} }
+  };
+</script>
     </head>
     <body>
         <div id="root"></div>
